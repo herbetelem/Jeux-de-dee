@@ -1,0 +1,24 @@
+Jeu de dés
+----------
+
+Objectif:
+---------
+
+Programmer un jeu de dés pour 2 joueurs.
+2 dés sont tirés pour chaque joueur.
+On affiche le résultat : 
+    - soit joueur 1 gagnant
+    - soit joueur 2 gagnant
+    - égalité
+
+
+Fonctionnement:
+---------------
+
+- Afficher le titre du jeu et les règles
+- Demander le nom du premier joueur
+- Demander le nom du deuxième joueur
+- Tirer les dés pour le 1er joueur
+- Tirer les dés pour le 2ème joueur
+- Comparer les jets de dés
+- Afficher le résultat

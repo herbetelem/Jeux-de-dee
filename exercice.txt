@@ -1,0 +1,13 @@
+Améliorer le jeu de dés de la manière suivante :
+
+- Permettre de joueur à plusieurs joueurs (de 2 à 10) - Merci Hadrien
+- Pouvoir lancer plusieurs dés (de 1 à 10) pour chaque joueur - Merci Laura
+- Pouvoir choisir précisément le nombre de faces des dés parmi les valeurs suivantes (4, 6, 8, 10, 12, 20 ou 100) - Merci Mélanie
+- Donner le détail des tirages (par dé) - Merci Hadrien
+- Permettre de rejouer sans arrêter le programme - Merci Aurélia
+- Vérifier que les noms des joueurs sont valides (ni vide ni composés exclusivement de chiffres) - Merci Alain
+- Vérifier que tous les noms sont différents - Merci Hadrien
+
+Faire le diagramme de flux et le code.
+
+Rendre le résultat sur le drive dans le dossier "Partage étudiants / Exercices / Exercice live 1" dans un sous-dossier à votre prénom.
