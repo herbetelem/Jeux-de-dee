@@ -11,9 +11,11 @@ def chooseName(compteur, listJoueur):
     if joueurX == "":
         joueurX = print("Veuillez saisir quelque chose ! ")
         return "ko"
+
     if re.match("^[0-9_-]*$", joueurX):
         joueurX = print("Veuillez ne pas choisir de chiffre ! ")
         return "ko"
+
     if joueurX in listJoueur:
         print("C'est malheureux mais un joueur porte deja ce nom, veuillez en prendre un autre ! ")
         return "ko"
@@ -44,6 +46,7 @@ def jeuxDeDee():
     nbJoueurs = input("Combien de joueurs êtes vous ? ")
     while re.match("^[A-Za-z]*$", nbJoueurs):
         nbJoueurs = input("veuillez choisir un chiffre ! ")
+
     while int(nbJoueurs) < 2 or int(nbJoueurs) > 10:
         nbJoueurs = int(input("Veuillez choisir un nombre entre 2 et 10 ? "))
 ###############################################################################################################
@@ -126,6 +129,7 @@ def jeuxDeDee():
     reponse = ["oui", "non"]
     while replay not in reponse:
         replay = str(input("veuillez repondre par oui ou non ! "))
+        
     if replay == "oui":
         jeuxDeDee()
 ###############################################################################################################
