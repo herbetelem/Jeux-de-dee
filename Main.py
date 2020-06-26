@@ -6,7 +6,7 @@ import re
 
 # This function is here to check the name
 ###############################################################################################################
-def chooseName(compteur, listJoueur):
+def choixNom(compteur, listeJoueur):
     joueurX = input("Joueur " + str((compteur + 1)) + ", quel est ton nom ? ")
     if joueurX == "":
         joueurX = print("Veuillez saisir quelque chose ! ")
@@ -16,11 +16,11 @@ def chooseName(compteur, listJoueur):
         joueurX = print("Veuillez ne pas choisir de chiffre ! ")
         return "ko"
 
-    if joueurX in listJoueur:
+    if joueurX in listeJoueur:
         print("C'est malheureux mais un joueur porte deja ce nom, veuillez en prendre un autre ! ")
         return "ko"
     else:
-        return joueurX
+        return joueurX.capitalize()
 ###############################################################################################################
 
 # I set up my game into a function for calling her at the end if the player want to play again
@@ -54,14 +54,14 @@ def jeuxDeDee():
 # Here I ask the name of all player and check if they are good, then i add the name on my list
 ###############################################################################################################
     print()
-    listJoueur = []
+    listeJoueur = []
     compteur = 0
     while int(compteur) < int(nbJoueurs):
-        joueurX = chooseName(compteur, listJoueur)
+        joueurX = choixNom(compteur, listeJoueur)
         while joueurX == "ko":
-            joueurX = chooseName(compteur, listJoueur)
-        listJoueur.append(joueurX)
-        print("Bonjour " + str(listJoueur[compteur]) + " !")
+            joueurX = choixNom(compteur, listeJoueur)
+        listeJoueur.append(joueurX)
+        print("Bonjour " + str(listeJoueur[compteur]) + " !")
         compteur = compteur + 1
 ###############################################################################################################
 
@@ -89,26 +89,26 @@ def jeuxDeDee():
 ###############################################################################################################
     print()
     compteur = 0
-    bestScore = 0
-    bestPlayer = ""
+    MeilleurScore = 0
+    MeilleurJoueur = ""
     result = 0
     while compteur < int(nbJoueurs):
         dee = 0
         scoreX = 0
         print()
-        print(str(listJoueur[compteur]) + " Lance ces dées")
+        print(str(listeJoueur[compteur]) + " Lance ces dées")
         while dee < nbDee:
             jetX = random.randint(1, int(nbFace))
             print(jetX)
             scoreX = scoreX + jetX
             dee = dee + 1
-        if scoreX > bestScore:
+        if scoreX > MeilleurScore:
             result = 0
-            bestScore = scoreX
-            bestPlayer = listJoueur[compteur]
-        elif scoreX == bestScore:
+            MeilleurScore = scoreX
+            MeilleurJoueur = listeJoueur[compteur]
+        elif scoreX == MeilleurScore:
             result = 1
-            bestPlayer = bestPlayer + " et " + listJoueur[compteur]
+            MeilleurJoueur = MeilleurJoueur + " et " + listeJoueur[compteur]
         compteur = compteur + 1
     print()
 ###############################################################################################################
@@ -116,21 +116,21 @@ def jeuxDeDee():
 # Here I check is the result is a win of one player or two
 ###############################################################################################################
     if result == 0:
-        print("c'est " + str(bestPlayer) + " qui gagne avec le score de " + str(bestScore))
+        print("c'est " + str(MeilleurJoueur) + " qui gagne avec le score de " + str(MeilleurScore))
     else:
-        print(str(bestPlayer) + " ce partage la victoire avec le score de " + str(bestScore))
+        print(str(MeilleurJoueur) + " ce partage la victoire avec le score de " + str(MeilleurScore))
 ###############################################################################################################
 
 
 # Here I ask if the player want to play again
 ###############################################################################################################
     print()
-    replay = str(input("souhaitez vous relancer une partie ? oui ou non ? "))
+    rejouer = str(input("souhaitez vous relancer une partie ? oui ou non ? "))
     reponse = ["oui", "non"]
-    while replay not in reponse:
-        replay = str(input("veuillez repondre par oui ou non ! "))
+    while rejouer not in reponse:
+        rejouer = str(input("veuillez repondre par oui ou non ! "))
         
-    if replay == "oui":
+    if rejouer == "oui":
         jeuxDeDee()
 ###############################################################################################################
 
